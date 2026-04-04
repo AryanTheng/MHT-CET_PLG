@@ -1,0 +1,42 @@
+# ENV FILES (both frontend & backend)
+
+.env
+**/.env
+
+# OS FILES
+
+.DS_Store
+Thumbs.db
+
+
+# LOGS
+
+*.log
+
+
+# BACKEND (FastAPI / Python)
+
+**pycache**/
+**/**pycache**/
+*.pyc
+
+venv/
+.venv/
+env/
+
+build/
+dist/
+*.egg-info/
+
+# FRONTEND (React / Node)
+
+**/node_modules/
+
+frontend/build/
+frontend/dist/
+frontend/.cache/
+
+.vscode/
+.idea/
+
+

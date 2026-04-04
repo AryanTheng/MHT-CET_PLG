@@ -1,0 +1,38 @@
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+
+# Database
+pymongo==4.7.3
+
+# Environment & config
+python-dotenv==1.0.1
+pydantic==2.7.4
+pydantic-settings==2.3.4
+email-validator==2.3.0
+
+# Auth & security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==4.0.1
+
+# File handling
+python-multipart==0.0.9
+python-docx==1.1.2
+docx2pdf==0.1.8
+Pillow==10.3.0
+reportlab==4.4.10
+docxtpl==0.20.2
+lxml==6.0.2
+
+# HTTP & API calls
+httpx==0.27.0
+
+# Cloud storage
+cloudinary==1.40.0
+
+# Optional JSON performance (FastAPI auto uses if present)
+orjson==3.11.7
+ujson==5.12.0
+
+# Utilities
+tqdm==4.67.3
+rich==14.3.3
