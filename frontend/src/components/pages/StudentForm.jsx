@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { C, s } from "../../utils/theme";
 import { Spinner } from "../ui";
 import { getDropdownOptions } from "../../api/colleges";
+import { generateCounsellingId } from "../../api/ref_id";
 
 const GENDER_OPTIONS = ["Male", "Female", "Other"];
 const DEFAULT_SEAT_TYPES = ["GOPENS","GSCS","GSTS","GVJS","GNT1S","GNT2S","GNT3S","LOBCS","LOPENS","LSCS","LSTS","GOBCS","TFWS"];
@@ -193,6 +194,19 @@ export default function StudentForm({ initial = null, onSave, onCancel, saving }
       .finally(() => setOptLoading(false));
   }, []);
 
+  useEffect(() => {
+  if (!initial) {
+    generateCounsellingId()
+      .then((res) => {
+        setForm((f) => ({
+          ...f,
+          counselling_id: res.counselling_id
+        }));
+      })
+      .catch(() => {});
+  }
+  }, []);
+
   const set      = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
   const setMulti = (k) => (v) => setForm((f) => ({ ...f, [k]: v }));
 
@@ -242,7 +256,11 @@ export default function StudentForm({ initial = null, onSave, onCancel, saving }
 
         <div>
           <label style={s.label}>Counselling ID</label>
-          <input style={inp} placeholder="e.g. CET24-001" value={form.counselling_id} onChange={set("counselling_id")} />
+          <input
+  style={{ ...inp, background: "#0f172a", cursor: "not-allowed" }}
+  value={form.counselling_id}
+  readOnly
+/>
         </div>
 
         <div>

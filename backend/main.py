@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from app.core.config import get_settings
 from app.core.database import get_client, close_db
-from app.routers import auth, students, colleges, export
+from app.routers import auth, students, colleges, export, ref_id
 
 
 @asynccontextmanager
@@ -42,6 +42,7 @@ app.include_router(auth.router)
 app.include_router(students.router)
 app.include_router(colleges.router)
 app.include_router(export.router)
+app.include_router(ref_id.router)
 
 
 @app.get("/health")
