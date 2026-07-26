@@ -36,6 +36,7 @@ def search_colleges(
     current_user: dict = Depends(get_current_user),
     ):
     col = cutoffs_col()
+    print(f"Searching colleges for percentile: {percentile}, seat_types: {seat_types}, preferred_cities: {preferred_cities}, preferred_branches: {preferred_branches}")
 
     # ─── PARSE INPUT ─────────────────────
     category_list = [s.strip() for s in seat_types.split(",") if s.strip()]
@@ -62,8 +63,8 @@ def search_colleges(
     expanded_branches = list(set(expanded_branches))  # remove duplicates
 
     # ─── BUILD QUERY ─────────────────────
-    lower_bound = percentile - 5
-    upper_bound = percentile + 5
+    lower_bound = percentile - 30
+    upper_bound = percentile + 30
 
     query = {
     "category": {"$in": category_list},
@@ -84,6 +85,7 @@ def search_colleges(
 
     # ─── FORMAT RESPONSE ─────────────────────
     results = []
+    print(f"Found {docs} documents matching the query.")
 
     for d in docs:
         results.append(
