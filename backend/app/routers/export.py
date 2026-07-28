@@ -46,6 +46,7 @@ def export_preference_list(
             preferred_branches=student.get("preferred_branches", []),
             preference_list=body.ordered_list,
         )
+        print(body.ordered_list)
     except RuntimeError as e:
         raise HTTPException(status_code=500, detail=str(e))
 

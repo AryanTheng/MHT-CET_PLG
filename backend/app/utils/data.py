@@ -17,7 +17,7 @@ BRANCH_MAPPING = {
         "Industrial IoT"
     ],
 
-    "AI, Data Science & Machine Learning": [
+    "AI Data Science & Machine Learning": [
         "Artificial Intelligence",
         "Artificial Intelligence (AI) and Data Science",
         "Artificial Intelligence and Data Science",

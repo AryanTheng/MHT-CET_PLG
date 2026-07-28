@@ -50,6 +50,7 @@ def search_colleges(
     [b.strip() for b in preferred_branches.split(",") if b.strip()]
     if preferred_branches else []
     )
+    print("selected branch", selected_general_branches)
 
     # ─── EXPAND GENERALIZED BRANCHES ─────────────────────
     expanded_branches = []
@@ -61,6 +62,7 @@ def search_colleges(
             expanded_branches.append(gb)  # fallback
 
     expanded_branches = list(set(expanded_branches))  # remove duplicates
+    print("total branch list", expanded_branches)
 
     # ─── BUILD QUERY ─────────────────────
     lower_bound = percentile - 30
