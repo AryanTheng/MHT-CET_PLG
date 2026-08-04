@@ -6,7 +6,7 @@ import { generateCounsellingId } from "../../api/ref_id";
 
 const GENDER_OPTIONS = ["Male", "Female", "Other"];
 const DEFAULT_SEAT_TYPES = ["GOPENS","GSCS","GSTS","GVJS","GNT1S","GNT2S","GNT3S","LOBCS","LOPENS","LSCS","LSTS","GOBCS","TFWS"];
-
+console.log("acceptable data", getDropdownOptions());
 // ── Searchable MultiSelect ────────────────────────────────────────────────────
 function MultiSelect({ label, options = [], selected = [], onChange, placeholder = "Select…" }) {
   const [open, setOpen]   = useState(false);

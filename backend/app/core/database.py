@@ -36,7 +36,7 @@ def students_col():
 
 
 def cutoffs_col():
-    return get_db()["college_cutoffs"]
+    return get_db()["cap2_cutoffs"]
 
 def ref_id():
     return get_db()["counters"]
